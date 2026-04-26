@@ -1,34 +1,3 @@
-```markdown
-# 🦞 FrontierPilot - AI Research Assistant
-
-<div align="center">
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Python](https://img.shields.io/badge/Python-3.8+-green)
-![Flask](https://img.shields.io/badge/Flask-2.0+-red)
-![OpenClaw](https://img.shields.io/badge/OpenClaw-Agent-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
-**An AI-powered research assistant that fetches latest papers from arXiv, analyzes authors, suggests communities, and provides learning paths.**
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://github.com/md-azad46/frontierpilot)
-[![Report Bug](https://img.shields.io/badge/Report-Bug-red)](https://github.com/md-azad46/frontierpilot/issues)
-[![Request Feature](https://img.shields.io/badge/Request-Feature-blue)](https://github.com/md-azad46/frontierpilot/issues)
-
-</div>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x400?text=FrontierPilot+Home+Page" alt="Home Page" width="800"/>
-  <br/>
-  <em>Home Page - Search Papers</em>
-</div>
-
----
-
 ## ✨ Features
 
 | Feature | Description |
@@ -45,15 +14,6 @@
 | 📱 **Responsive Design** | Works on desktop, tablet, and mobile |
 
 ---
-
-## 🎯 Export Formats
-
-| Format | Use Case | Icon |
-|--------|----------|------|
-| **JSON** | Developers, APIs, Data Analysis | 📄 |
-| **CSV** | Excel, Spreadsheets, Databases | 📊 |
-| **TXT** | Plain text reading, Notes | 📝 |
-| **PDF** | Reports, Printing, Sharing | 📕 |
 
 ---
 
@@ -302,18 +262,5 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 - GitHub: [@md-azad46](https://github.com/md-azad46)
 - Project Link: [https://github.com/md-azad46/frontierpilot](https://github.com/md-azad46/frontierpilot)
 - Challenge Link: [OpenClaw Challenge 2026](https://dev.to/challenges/openclaw)
-
----
-
-## ⭐ Show Your Support
-
-If you found this project helpful, please give it a ⭐ on GitHub!
-
----
-
-<div align="center">
-  <sub>Built with ❤️ for the OpenClaw Challenge 2026</sub>
-</div>
-```
 
 ---
