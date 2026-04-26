@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Researchers | FrontierPilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-lobster"></i>
+                <span>FrontierPilot</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="communities.html">Communities</a>
+                <a href="learning.html">Learning Path</a>
+                <a href="researchers.html" class="active">Researchers</a>
+                <a href="docs.html">Documentation</a>
+                <a href="https://github.com/md-azad46" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero small-hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-users"></i> Top Researchers</h1>
+            <p>Leading experts in the field</p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Search for Researchers -->
+        <div class="search-card researchers-search">
+            <div class="input-group">
+                <label><i class="fas fa-tag"></i> Enter Topic to Find Researchers</label>
+                <input type="text" id="researcherTopic" placeholder="e.g., large language model, machine learning">
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-sliders-h"></i> Number of Papers to Analyze</label>
+                <div class="range-control">
+                    <input type="range" id="researcherMaxResults" min="5" max="50" value="10" step="5">
+                    <span id="researcherResultsCount" class="range-value">10</span>
+                </div>
+            </div>
+            <button id="searchResearchersBtn" class="search-btn">
+                <i class="fas fa-search"></i> Find Top Researchers
+            </button>
+        </div>
+
+        <!-- Loading -->
+        <div id="researcherLoading" class="loading-state hidden">
+            <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></div>
+            <h3>Analyzing researcher impact...</h3>
+        </div>
+
+        <!-- Error -->
+        <div id="researcherError" class="error-section hidden"></div>
+
+        <!-- Results -->
+        <div id="researchersResults" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-trophy"></i>
+                <h3>🏆 Top Researchers in this Field</h3>
+            </div>
+            <div id="researchersList" class="researchers-grid-large"></div>
+        </div>
+
+        <!-- Stats -->
+        <div id="researcherStats" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-chart-bar"></i>
+                <h3>📊 Research Statistics</h3>
+            </div>
+            <div class="researcher-stats-grid" id="researcherStatsGrid"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🦞 FrontierPilot</h4>
+            <p>AI-powered research assistant</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="communities.html">Communities</a></li>
+                <li><a href="learning.html">Learning Path</a></li>
+                <li><a href="researchers.html">Researchers</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="https://github.com/md-azad46" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FrontierPilot | Powered by OpenClaw Agent</p>
+    </div>
+</footer>
+
+    <script src="researchers.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

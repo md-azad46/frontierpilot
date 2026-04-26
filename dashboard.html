@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | FrontierPilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-lobster"></i>
+                <span>FrontierPilot</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="https://github.com/md-azad46" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero small-hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-chart-line"></i> Research Dashboard</h1>
+            <p>Analytics, communities, researchers and learning path</p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Search for Dashboard -->
+        <div class="search-card dashboard-search">
+            <div class="input-group">
+                <label><i class="fas fa-tag"></i> Enter Topic to Analyze</label>
+                <input type="text" id="dashboardTopic" placeholder="e.g., large language model">
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-sliders-h"></i> Number of Papers</label>
+                <div class="range-control">
+                    <input type="range" id="dashboardMaxResults" min="5" max="50" value="10" step="5">
+                    <span id="dashboardResultsCount" class="range-value">10</span>
+                </div>
+            </div>
+            <button id="dashboardSearchBtn" class="search-btn">
+                <i class="fas fa-chart-line"></i> Generate Dashboard
+            </button>
+        </div>
+
+        <!-- Loading -->
+        <div id="dashboardLoading" class="loading-state hidden">
+            <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></div>
+            <h3>Analyzing research trends...</h3>
+        </div>
+
+        <!-- Error -->
+        <div id="dashboardError" class="error-section hidden"></div>
+
+        <!-- Top Researchers Section -->
+        <div id="researchersSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-users"></i>
+                <h3>🏆 Top Researchers in this Field</h3>
+            </div>
+            <div id="researchersList" class="researchers-grid"></div>
+        </div>
+
+        <!-- Communities Section -->
+        <div id="communitiesSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-comments"></i>
+                <h3>🌐 Communities to Join</h3>
+            </div>
+            <div id="communitiesList" class="communities-grid"></div>
+        </div>
+
+        <!-- Learning Path Section -->
+        <div id="learningSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-road"></i>
+                <h3>📚 Learning Path</h3>
+            </div>
+            <div id="learningList" class="learning-path"></div>
+        </div>
+
+        <!-- Stats Summary -->
+        <div id="statsSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-chart-bar"></i>
+                <h3>📊 Research Summary</h3>
+            </div>
+            <div class="stats-summary" id="statsSummary"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🦞 FrontierPilot</h4>
+            <p>AI-powered research assistant</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="communities.html">Communities</a></li>
+                <li><a href="learning.html">Learning Path</a></li>
+                <li><a href="researchers.html">Researchers</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="https://github.com/md-azad46" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FrontierPilot | Powered by OpenClaw Agent</p>
+    </div>
+</footer>
+
+    <script src="dashboard.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontierPilot | AI Research Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-lobster"></i>
+                <span>FrontierPilot</span>
+            </div>
+            
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="communities.html">Communities</a>
+                <a href="learning.html">Learning Path</a>
+                <a href="researchers.html">Researchers</a>
+                <a href="docs.html">Documentation</a>
+                <a href="https://github.com/md-azad46" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI-Powered Research Assistant</h1>
+            <p>Powered by arXiv API & OpenClaw Agent Framework</p>
+            <div class="hero-badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Real-time Paper Fetching</span>
+                <span class="badge"><i class="fas fa-robot"></i> AI-Powered Summaries</span>
+                <span class="badge"><i class="fas fa-users"></i> Community Discovery</span>
+                <span class="badge"><i class="fas fa-road"></i> Learning Path</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Search Card -->
+        <div class="search-card">
+            <div class="card-header">
+                <i class="fas fa-search"></i>
+                <h3>Research Paper Discovery</h3>
+            </div>
+            
+            <div class="input-group">
+                <label><i class="fas fa-tag"></i> Research Topic</label>
+                <input type="text" id="topicInput" placeholder="e.g., large language model, quantum computing">
+            </div>
+
+            <div class="trending-topics">
+                <label><i class="fas fa-fire"></i> Trending Topics</label>
+                <div class="topic-chips">
+                    <span class="chip" data-topic="large language model">🔥 LLM</span>
+                    <span class="chip" data-topic="quantum computing">⚛️ Quantum</span>
+                    <span class="chip" data-topic="machine learning">🤖 ML</span>
+                    <span class="chip" data-topic="computer vision">👁️ CV</span>
+                    <span class="chip" data-topic="reinforcement learning">🎮 RL</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-sliders-h"></i> Number of Papers</label>
+                <div class="range-control">
+                    <input type="range" id="maxResults" min="5" max="50" value="10" step="5">
+                    <span class="range-value" id="resultsCount">10</span>
+                </div>
+            </div>
+
+            <button id="searchBtn" class="search-btn">
+                <i class="fas fa-rocket"></i> Start Research
+            </button>
+        </div>
+
+        <!-- Stats Dashboard -->
+        <div id="statsDashboard" class="stats-dashboard hidden">
+            <div class="stat-card">
+                <i class="fas fa-file-alt"></i>
+                <div class="stat-info">
+                    <h4>Total Papers</h4>
+                    <span id="totalPapers">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="stat-info">
+                    <h4>Unique Authors</h4>
+                    <span id="totalAuthors">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <h4>Search Time</h4>
+                    <span id="searchTime">0s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-info">
+                    <h4>Top Author</h4>
+                    <span id="topAuthor">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading-state hidden">
+            <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i></div>
+            <h3>Scanning arXiv Database...</h3>
+            <p>Fetching latest research papers</p>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="results-section hidden">
+            <div class="results-header">
+                <div class="results-stats" id="resultCount"></div>
+                <div class="sort-controls">
+                    <button id="sortDateBtn" class="sort-btn"><i class="fas fa-calendar"></i> Date</button>
+                    <button id="sortTitleBtn" class="sort-btn"><i class="fas fa-sort-alpha-down"></i> Title</button>
+                </div>
+                <div class="results-actions">
+    <button id="exportJsonBtn" class="action-btn"><i class="fas fa-download"></i> JSON</button>
+    <button id="exportCsvBtn" class="action-btn"><i class="fas fa-table"></i> CSV</button>
+    <button id="exportTxtBtn" class="action-btn"><i class="fas fa-file-alt"></i> TXT</button>
+    <button id="exportPdfBtn" class="action-btn"><i class="fas fa-file-pdf"></i> PDF</button>
+    <button id="copyBtn" class="action-btn"><i class="fas fa-copy"></i> Copy</button>
+</div>
+            </div>
+            <div id="papersList" class="papers-grid"></div>
+        </div>
+
+        <!-- Top Researchers -->
+        <div id="researchersSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-users"></i>
+                <h3>Top Researchers in this Field</h3>
+            </div>
+            <div id="researchersList" class="researchers-grid"></div>
+        </div>
+
+        <!-- Communities -->
+        <div id="communitiesSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-comments"></i>
+                <h3>Communities to Join</h3>
+            </div>
+            <div id="communitiesList" class="communities-grid"></div>
+        </div>
+
+        <!-- Learning Path -->
+        <div id="learningSection" class="info-section hidden">
+            <div class="info-header">
+                <i class="fas fa-road"></i>
+                <h3>Learning Path</h3>
+            </div>
+            <div id="learningList" class="learning-path"></div>
+        </div>
+
+        <!-- Error -->
+        <div id="error" class="error-section hidden"></div>
+    </div>
+
+    <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🦞 FrontierPilot</h4>
+            <p>AI-powered research assistant</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="communities.html">Communities</a></li>
+                <li><a href="learning.html">Learning Path</a></li>
+                <li><a href="researchers.html">Researchers</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="https://github.com/md-azad46" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FrontierPilot | Powered by OpenClaw Agent</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

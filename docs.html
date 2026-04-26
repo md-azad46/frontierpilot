@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | FrontierPilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-lobster"></i>
+                <span>FrontierPilot</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="communities.html">Communities</a>
+                <a href="learning.html">Learning Path</a>
+                <a href="researchers.html">Researchers</a>
+                <a href="docs.html" class="active">Documentation</a>
+                <a href="https://github.com/md-azad46" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero small-hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-book"></i> Documentation</h1>
+            <p>How to use FrontierPilot</p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <div class="docs-container">
+            <div class="docs-sidebar">
+                <div class="docs-menu">
+                    <a href="#getting-started" class="docs-menu-item active">Getting Started</a>
+                    <a href="#search" class="docs-menu-item">How to Search Papers</a>
+                    <a href="#export" class="docs-menu-item">Exporting Results</a>
+                    <a href="#dashboard" class="docs-menu-item">Using Dashboard</a>
+                    <a href="#api" class="docs-menu-item">API Reference</a>
+                    <a href="#faq" class="docs-menu-item">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="docs-content">
+                <section id="getting-started" class="docs-section">
+                    <h2><i class="fas fa-rocket"></i> Getting Started</h2>
+                    <p>FrontierPilot helps you discover research papers from arXiv and provides AI-powered insights.</p>
+                    
+                    <div class="docs-card">
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>Python 3.8 or higher</li>
+                            <li>Modern web browser (Chrome, Firefox, Edge)</li>
+                            <li>Internet connection</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-card">
+                        <h3>Installation</h3>
+                        <pre><code>git clone https://github.com/md-azad46/frontierpilot.git
+cd frontierpilot
+pip install flask flask-cors
+python backend.py</code></pre>
+                    </div>
+                </section>
+
+                <section id="search" class="docs-section">
+                    <h2><i class="fas fa-search"></i> How to Search Papers</h2>
+                    <div class="docs-card">
+                        <h3>Step 1: Enter Topic</h3>
+                        <p>Type your research topic in the search box (e.g., "large language model", "quantum computing")</p>
+                        
+                        <h3>Step 2: Select Number of Papers</h3>
+                        <p>Use the slider to choose between 5-50 papers</p>
+                        
+                        <h3>Step 3: Click Search</h3>
+                        <p>Click the "Start Research" button to fetch papers from arXiv</p>
+                        
+                        <div class="tip-box">
+                            <i class="fas fa-lightbulb"></i>
+                            <strong>Tip:</strong> Use specific keywords for better results!
+                        </div>
+                    </div>
+                </section>
+
+                <section id="export" class="docs-section">
+                    <h2><i class="fas fa-download"></i> Exporting Results</h2>
+                    <div class="docs-card">
+                        <p>You can export papers in three formats:</p>
+                        <ul>
+                            <li><strong>JSON</strong> - For developers and data analysis</li>
+                            <li><strong>CSV</strong> - For spreadsheets and databases</li>
+                            <li><strong>TXT</strong> - For plain text reading</li>
+                        </ul>
+                        <p>Click the respective button in the results header to download.</p>
+                    </div>
+                </section>
+
+                <section id="dashboard" class="docs-section">
+                    <h2><i class="fas fa-chart-line"></i> Using Dashboard</h2>
+                    <div class="docs-card">
+                        <p>The Dashboard provides advanced analytics:</p>
+                        <ul>
+                            <li><strong>Top Researchers</strong> - Most active authors in your field</li>
+                            <li><strong>Communities</strong> - Reddit, Discord, and conferences to join</li>
+                            <li><strong>Learning Path</strong> - Structured roadmap from beginner to advanced</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="api" class="docs-section">
+                    <h2><i class="fas fa-code"></i> API Reference</h2>
+                    <div class="docs-card">
+                        <h3>Search Endpoint</h3>
+                        <pre><code>POST /search
+Content-Type: application/json
+
+{
+    "topic": "machine learning",
+    "max_results": 10
+}</code></pre>
+                        
+                        <h3>Response Format</h3>
+                        <pre><code>{
+    "papers": [...],
+    "count": 10,
+    "topic": "machine learning",
+    "search_time": "2026-04-26 15:30:00"
+}</code></pre>
+                    </div>
+                </section>
+
+                <section id="faq" class="docs-section">
+                    <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+                    <div class="docs-card">
+                        <div class="faq-item">
+                            <h3>Is FrontierPilot free?</h3>
+                            <p>Yes, completely free and open source!</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How current are the papers?</h3>
+                            <p>FrontierPilot fetches latest papers from arXiv in real-time.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can I use it offline?</h3>
+                            <p>No, internet connection is required to fetch papers from arXiv.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What if I get an error?</h3>
+                            <p>Make sure python backend.py is running on port 5000 and Gateway is active.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+   <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🦞 FrontierPilot</h4>
+            <p>AI-powered research assistant</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="communities.html">Communities</a></li>
+                <li><a href="learning.html">Learning Path</a></li>
+                <li><a href="researchers.html">Researchers</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="https://github.com/md-azad46" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 FrontierPilot | Powered by OpenClaw Agent</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
