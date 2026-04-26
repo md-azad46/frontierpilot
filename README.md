@@ -1,3 +1,34 @@
+## 🦞 What is FrontierPilot?
+
+**FrontierPilot** is an AI-powered research assistant that helps you discover academic papers from arXiv in seconds.
+
+Instead of spending hours scrolling through arXiv, just type your research topic, and FrontierPilot fetches the latest papers with summaries, authors, and publication dates. You can export results as JSON, CSV, TXT, or PDF.
+
+### Why I built this?
+
+As a student/researcher, I often struggled to find relevant papers quickly. I wanted a tool that:
+- Fetches papers instantly by topic
+- Shows summaries without opening each link
+- Exports results for offline reading
+- Suggests communities and learning paths
+
+### What problem does it solve?
+
+| Problem | Solution |
+|---------|----------|
+| Too much time searching | Instant search by topic |
+| Hard to find relevant papers | AI-powered summaries |
+| Can't save results | Export to JSON/CSV/TXT/PDF |
+| Don't know where to start | Learning path for beginners |
+| Need research community | Community suggestions |
+
+### Who is it for?
+
+- 🎓 Students working on thesis/projects
+- 👨‍🔬 Researchers staying updated
+- 👩‍🏫 Professors preparing courses
+- 📊 Data scientists analyzing trends
+- 🤖 Anyone curious about a topic
 ## ✨ Features
 
 | Feature | Description |
